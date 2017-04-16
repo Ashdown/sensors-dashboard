@@ -1,4 +1,23 @@
-# Frontend Take-Home Exercise for Converge
+# Sensors Dashboard
+
+App to demonstrate the following:
+
+1. A web client (a dashboard with which to view sensors), built in React.
+2. A basic http api server to serve data from the json file to the web client.
+
+## Helpful Commands
+
+### Validate JS
+
+    `npm run lint`
+
+## Links
+
+* [Somewhere](http://www.google.com)
+
+## Original Instructions
+
+### Frontend Take-Home Exercise for Converge
 
 The purpose of this exercise is to test your ability to build a basic front-end
 application in react which can pull data from an api.
@@ -31,7 +50,7 @@ structure information in a useful way to the user is a factor. The main factors
 in this exercise are code structure and cleanliness (as well as the end result
 being functional).
 
-## Included files
+#### Included files
 
 1. README.md (this file)
 2. data.json (data for the sensors, note that they have fixed timestamps)

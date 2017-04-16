@@ -1,0 +1,17 @@
+{
+  "name": "sensors-dashboard",
+  "version": "0.0.1",
+  "scripts": {
+      "lint": "eslint --quiet *.js **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ashdown/sensors-dashboard"
+  },
+  "author": "Rory Devane rory.devane@gmail.com",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "eslint": "^3.10.2",
+    "eslint-plugin-react": "^6.7.1"
+  }
+}
