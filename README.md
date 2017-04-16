@@ -11,13 +11,17 @@ App to demonstrate the following:
 
     `npm run lint`
     
+### Run tests
+    
+    `npm run test:feature`
+    
 ### Run App Locally
     
     `npm start`
 
 ## Links
 
-* [Somewhere](http://www.google.com)
+* [App on Heroku](https://secret-chamber-77807.herokuapp.com)
 
 ## Original Instructions
 
