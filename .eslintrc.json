@@ -34,7 +34,10 @@
     },
     "globals": {
         "require": true,
-        "module": true
+        "module": true,
+        "console": true,
+        "process": true,
+        "__dirname": true
     }
 
 }
