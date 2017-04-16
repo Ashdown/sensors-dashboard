@@ -2,7 +2,8 @@
   "name": "sensors-dashboard",
   "version": "0.0.1",
   "scripts": {
-      "lint": "eslint --quiet *.js **/*.js"
+    "start": "node app.js",
+    "lint": "./node_modules/.bin/eslint --quiet *.js **/*.js"
   },
   "repository": {
     "type": "git",
@@ -13,5 +14,8 @@
   "devDependencies": {
     "eslint": "^3.10.2",
     "eslint-plugin-react": "^6.7.1"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
   }
 }

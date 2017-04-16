@@ -10,6 +10,10 @@ App to demonstrate the following:
 ### Validate JS
 
     `npm run lint`
+    
+### Run App Locally
+    
+    `npm start`
 
 ## Links
 
