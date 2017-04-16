@@ -50,7 +50,7 @@ describe("/sensors/:sensorid", function () {
             chai.request(app)
                 .get("/sensor/" + sensorid)
                 .end(function (err, res) {
-                    (res.body).should.be.a('array');
+                    (res.body).should.be.a("array");
                     (res.body.length).should.equal(126);
                     done();
                 });
