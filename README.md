@@ -13,11 +13,15 @@ App to demonstrate the following:
     
 ### Run tests
     
-    `npm run test:feature`
+    `npm run test:feature`    
     
 ### Run App Locally
     
     `npm start`
+    
+### Build for production
+    
+    `npm run build`
 
 ## Links
 

@@ -1,7 +1,7 @@
 let express = require("express");
 let app = express();
-
 let static_directory = "//localhost:4000/static/";
+let path = require("path");
 
 if(process.env.NODE_ENV === "production") {
     static_directory = "/";
@@ -10,6 +10,8 @@ if(process.env.NODE_ENV === "production") {
 }
 
 app.set("port", (process.env.PORT || 3000));
+
+app.use("/", express.static(path.join(__dirname, "public")));
 
 app.get("/", function(req, res) {
     res.render("index.ejs", {static_directory: static_directory});
