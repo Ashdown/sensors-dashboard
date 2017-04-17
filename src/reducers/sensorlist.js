@@ -4,6 +4,14 @@ const initialState = {
     sensors: []
 };
 
+function sortRecordingDataByTime(data) {
+
+    return data.sort(function(a, b) {
+        return a.time = b.time;
+    });
+
+}
+
 export default function sensorlist(state = initialState, action) {
 
     switch (action.type) {
@@ -17,7 +25,8 @@ export default function sensorlist(state = initialState, action) {
                     return state;
                 }
             }
-            // //add a new sensor data
+
+            //add a new sensor recording
 
             return {
                 sensors: [
@@ -31,7 +40,15 @@ export default function sensorlist(state = initialState, action) {
             };
 
 
-        //TODO: add data for a sensor
+        case types.ADD_RECORDING_DATA:
+
+            for (let sensor of state.sensors) {
+                if(sensor.id === action.sensorId) {
+
+                    sensor.data = sortRecordingDataByTime(action.data);
+                }
+            }
+            return state;
 
         default:
             return state;
