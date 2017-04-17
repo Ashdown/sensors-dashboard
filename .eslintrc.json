@@ -39,7 +39,8 @@
         "require": true,
         "module": true,
         "process": true,
-        "__dirname": true
+        "__dirname": true,
+        "__DEV__": true
     }
 
 }

@@ -18,7 +18,10 @@
   "jest": {
     "testMatch": [
       "**/test/unit/**/*.js?(x)"
-    ]
+    ],
+    "globals": {
+      "__DEV__": true
+    }
   },
   "devDependencies": {
     "babel-core": "^6.0.20",

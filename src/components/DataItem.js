@@ -12,8 +12,8 @@ export default class DataItem extends Component {
         return (
             <li className="data-item">
                 <ul>
-                    <li><strong>Time: </strong><span>{this.props.time}</span></li>
-                    <li><strong>Value </strong><span>{this.props.value}</span></li>
+                    <li><strong>Time: </strong><span className="time">{this.props.time}</span></li>
+                    <li><strong>Value </strong><span className="value">{this.props.value}</span></li>
                 </ul>
             </li>
         );

@@ -4,7 +4,7 @@ import DataItem from "./DataItem";
 export default class DataList extends Component {
 
     static propTypes = {
-        recordings: PropTypes.object.isRequired
+        recordings: PropTypes.array.isRequired
     };
 
     render() {

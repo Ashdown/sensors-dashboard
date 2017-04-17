@@ -10,21 +10,17 @@ export default class SensorItem extends Component {
     render() {
 
         function fetchRecordingData(sensorId, dispatch, actions) {
-            console.log('fetch recording data');
             fetch("/sensor/" + sensorId)
                 .then(function (response) {
                     return response.json();
                 })
                 .then(function (data) {
-                    console.log(data);
-
                     dispatch(actions.addRecordingData(sensorId, data));
                 });
         }
 
         function showData(id, event, dispatch, actions) {
             event.preventDefault();
-            console.log('show data');
             fetchRecordingData(id, dispatch, actions)
         }
 
