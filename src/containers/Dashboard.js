@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {combineReducers} from "redux";
 // import {Provider} from "react-redux";
 
-import {createStore, renderDevTools} from "../store_enhancers/devTools";
+// import {createStore, renderDevTools} from "../store_enhancers/devTools";
 
 // import DashboardApp from "./DashboardApp";
 // import * as reducers from "../reducers";
@@ -13,8 +13,8 @@ import {createStore, renderDevTools} from "../store_enhancers/devTools";
 export default class Dashboard extends Component {
     render() {
         return (
-            <div>
-                <h2>Dashboard</h2>
+            <div className="dashboard">
+                <h2 className="dashboard-title">Dashboard</h2>
                 {/*{renderDevTools(store)}*/}
             </div>
         );
