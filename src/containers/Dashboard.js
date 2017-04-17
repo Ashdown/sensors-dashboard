@@ -10,11 +10,11 @@ import {createStore, renderDevTools} from "../store_enhancers/devTools";
 // const reducer = combineReducers(reducers);
 // const store = createStore(reducer);
 
-export default class App extends Component {
+export default class Dashboard extends Component {
     render() {
         return (
             <div>
-                <h2>React Component</h2>
+                <h2>Dashboard</h2>
                 {/*{renderDevTools(store)}*/}
             </div>
         );
