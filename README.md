@@ -14,6 +14,7 @@ App to demonstrate the following:
 ### Run tests
     
     `npm run test:feature`    
+    `npm run test:unit`
     
 ### Run App Locally
     
