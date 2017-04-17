@@ -20,6 +20,10 @@ App to demonstrate the following:
     
     `npm start`
     
+### Run App in debug mode
+    
+    `DEBUG=true npm start`
+    
 ### Build for production
     
     `npm run build`
