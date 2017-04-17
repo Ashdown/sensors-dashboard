@@ -1,7 +1,19 @@
 let express = require("express");
 let app = express();
 
+let static_directory = "//localhost:4000/static/";
+
+if(process.env.NODE_ENV === "production") {
+    static_directory = "/";
+} else {
+    require("./dev-server");
+}
+
 app.set("port", (process.env.PORT || 3000));
+
+app.get("/", function(req, res) {
+    res.render("index.ejs", {static_directory: static_directory});
+});
 
 app.get("/sensors", function (req, res) {
     let sensorsData = require("./data/sensors.json");
@@ -15,7 +27,7 @@ app.get("/sensor/:sensorid", function(req, res) {
 
     let responseData = [];
 
-    for(var data of allData) {
+    for(let data of allData) {
         if(data.sensorId === sensorId) {
             responseData.push(data);
         }

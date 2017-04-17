@@ -33,7 +33,6 @@ describe("Sensors", function () {
             .get("/sensors")
             .end(function (err, res) {
                 let sensors = res.body;
-                console.log(sensors);
                 (sensors.length).should.equal(3);
                 done();
             });

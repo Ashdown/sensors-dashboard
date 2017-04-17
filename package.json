@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "express": "^4.13.4",
-    "requirejs": "^2.3.3"
+    "requirejs": "^2.3.3",
+    "ejs": "^2.5.6"
   }
 }
