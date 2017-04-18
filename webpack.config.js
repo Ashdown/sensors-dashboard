@@ -20,7 +20,9 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         devFlagPlugin,
-        new ExtractTextPlugin("index.css")
+        new ExtractTextPlugin("index.css", {
+            allChunks: true
+        })
     ],
     module: {
         loaders: [
@@ -31,14 +33,9 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract("css-loader?module!cssnext-loader")
-            },
-            {
                 test: /\.scss$/,
-                loaders: ["style", "css", "sass"]
+                loader: ExtractTextPlugin.extract('css!sass')
             }
-
         ]
     },
     resolve: {

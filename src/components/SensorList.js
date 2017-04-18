@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import * as sensorActions from "../actions/sensorActions";
 import fetch from "isomorphic-fetch";
 
+
+
 @connect(state => ({
     sensorlist: state.sensorlist
 }))
