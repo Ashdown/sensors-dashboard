@@ -16,7 +16,8 @@ export default class Dashboard extends Component {
 
         return (
             <div className="dashboard">
-                <h2 className="dashboard-title">Dashboard</h2>
+                <h2 className="title dashboard-title">Dashboard</h2>
+                <p className="para">Select from below to view the recording results for that sensor</p>
                 <Provider store={store}>
                     {() => <SensorList /> }
                 </Provider>

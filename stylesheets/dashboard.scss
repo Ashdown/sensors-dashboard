@@ -1,0 +1,49 @@
+.dashboard {
+  border: 2px solid $white;
+  margin: 16px 16px 0 16px;
+  padding: 0 16px;
+
+  .dashboard-title {
+    font-size: 24px;
+    margin-top: 16px;
+  }
+
+  .para {
+    font-size: 16px;
+    margin-top: 16px;
+    text-align: center;
+  }
+}
+
+@include respond-to(tablet) {
+
+  .dashboard {
+
+    margin: 32px 32px 0 32px;
+
+    .dashboard-title {
+      font-size: 32px;
+      margin-top: 24px;
+    }
+
+    .para {
+      margin-top: 24px;
+    }
+  }
+
+}
+
+@include respond-to(desktop) {
+
+  .dashboard {
+
+    .dashboard-title {
+      font-size: 40px;
+      margin-top: 32px;
+    }
+    .para {
+      font-size: 24px;
+      margin-top: 32px;
+    }
+  }
+}
