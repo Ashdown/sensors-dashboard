@@ -1,0 +1,12 @@
+.data-list {
+  overflow: hidden;
+  @include transition(max-height, 0.4s, linear);
+
+  .closed & {
+    max-height: 0;
+  }
+
+  .open & {
+    max-height: 4500px
+  }
+}

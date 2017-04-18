@@ -1,8 +1,5 @@
 @import 'variables';
 @import 'mixins';
-@import 'reset';
-@import 'page';
-@import 'dashboard';
 
 body {
   background-color: $dark-grey;
@@ -11,3 +8,11 @@ body {
 .title {
   text-align: center;
 }
+
+@import 'reset';
+@import 'page';
+@import 'dashboard';
+@import 'sensor-list';
+@import 'sensor-item';
+@import 'data-list';
+@import 'data-item';

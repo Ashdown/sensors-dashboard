@@ -1,0 +1,15 @@
+.sensor-list {
+  margin-top: 16px;
+}
+
+@include respond-to(tablet) {
+  .sensor-list {
+    margin-top: 24px;
+  }
+}
+
+@include respond-to(desktop) {
+  .sensor-list {
+    margin-top: 32px;
+  }
+}

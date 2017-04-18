@@ -1,7 +1,18 @@
 import React, {Component, PropTypes} from "react";
 
-export default class DataItem extends Component {
+function getTimeString(timestamp) {
+    let a = new Date(timestamp * 1000);
+    let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    let year = a.getFullYear();
+    let month = months[a.getMonth()];
+    let date = a.getDate();
+    let hour = a.getHours();
+    let min = a.getMinutes();
+    let sec = a.getSeconds();
+    return date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+}
 
+export default class DataItem extends Component {
     static propTypes = {
         time: PropTypes.string.isRequired,
         value: PropTypes.number.isRequired
@@ -11,9 +22,9 @@ export default class DataItem extends Component {
 
         return (
             <li className="data-item">
-                <ul>
-                    <li><strong>Time: </strong><span className="time">{this.props.time}</span></li>
-                    <li><strong>Value </strong><span className="value">{this.props.value}</span></li>
+                <ul className="value-list">
+                    <li className="time">{getTimeString(this.props.time)}</li>
+                    <li className="value">{this.props.value}</li>
                 </ul>
             </li>
         );

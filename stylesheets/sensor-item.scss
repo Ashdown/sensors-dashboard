@@ -1,0 +1,32 @@
+.sensor-item {
+  margin-top: 8px;
+  border: 2px solid $white;
+
+  .sensor-link {
+    color: $white;
+    font-size: 24px;
+    text-align: center;
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    text-transform: capitalize;
+    @include transition(background-color, 0.2s, ease);
+
+    &:hover {
+      background-color: $white;
+      color: $dark-grey
+    }
+
+  }
+
+}
+
+@include respond-to(tablet) {
+  .sensor-item {
+    margin-top: 16px;
+    .sensor-link {
+      text-align: right;
+      padding: 16px;
+    }
+  }
+}

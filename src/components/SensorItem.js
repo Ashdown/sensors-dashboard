@@ -7,6 +7,13 @@ export default class SensorItem extends Component {
         sensorData: PropTypes.object.isRequired,
     };
 
+    constructor () {
+        super();
+        this.state = {
+            status: 'closed'
+        };
+    }
+
     render() {
 
         function fetchRecordingData(sensorId, dispatch, actions) {
@@ -19,14 +26,17 @@ export default class SensorItem extends Component {
                 });
         }
 
-        function showData(id, event, dispatch, actions) {
+        function showData(id, event, component) {
             event.preventDefault();
-            fetchRecordingData(id, dispatch, actions)
+            fetchRecordingData(id, component.props.dispatch, component.props.actions);
+            component.setState({
+                status: 'open'
+            });
         }
 
         return (
-            <li className="sensor-item">
-                <a onClick={(event) => showData(this.props.sensorData.id, event, this.props.dispatch, this.props.actions)} href="/">{this.props.sensorData.name}</a>
+            <li className={"sensor-item " + this.state.status}>
+                <a className="sensor-link" onClick={(event) => showData(this.props.sensorData.id, event, this)} href="/">{this.props.sensorData.name}</a>
                 <DataList recordings={this.props.sensorData.data} />
             </li>
         );
