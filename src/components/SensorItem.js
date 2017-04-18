@@ -16,22 +16,36 @@ export default class SensorItem extends Component {
 
     render() {
 
-        function fetchRecordingData(sensorId, dispatch, actions) {
+        function fetchRecordingData(sensorId, dispatch, actions, callback) {
             fetch("/sensor/" + sensorId)
                 .then(function (response) {
                     return response.json();
                 })
                 .then(function (data) {
                     dispatch(actions.addRecordingData(sensorId, data));
+                    callback();
                 });
+        }
+
+        function toggleAccordion(component) {
+
+            let newStatus = "open";
+
+            if(component.state.status === 'open') {
+                newStatus = 'closed';
+            }
+
+            component.setState({
+                status: newStatus
+            });
         }
 
         function showData(id, event, component) {
             event.preventDefault();
-            fetchRecordingData(id, component.props.dispatch, component.props.actions);
-            component.setState({
-                status: 'open'
+            fetchRecordingData(id, component.props.dispatch, component.props.actions, function() {
+                toggleAccordion(component);
             });
+
         }
 
         return (
