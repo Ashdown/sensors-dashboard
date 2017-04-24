@@ -44,4 +44,5 @@ describe("sensorlist reducer", () => {
             "sensors": []
         });
     });
+
 });

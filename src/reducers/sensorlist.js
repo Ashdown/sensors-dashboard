@@ -7,7 +7,7 @@ const initialState = {
 function sortRecordingDataByTime(data) {
 
     return data.sort(function(a, b) {
-        return a.time = b.time;
+        return a.time - b.time;
     });
 
 }
@@ -46,6 +46,7 @@ export default function sensorlist(state = initialState, action) {
                 if(sensor.id === action.sensorId) {
 
                     sensor.data = sortRecordingDataByTime(action.data);
+
                 }
             }
             return state;

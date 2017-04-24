@@ -1,7 +1,5 @@
 import * as types from "../constants/ActionTypes";
 
-var sensorDataLoaded = false;
-
 export function addSensorData(data) {
     return {
         type: types.ADD_SENSOR_DATA,
