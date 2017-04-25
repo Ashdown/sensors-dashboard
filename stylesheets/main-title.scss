@@ -1,6 +1,6 @@
 .main-title {
   font-size: 32px;
-  margin: 16px auto 0 auto;
+  margin: 32px auto 0 auto;
 
   .text{
     position: relative;
@@ -12,8 +12,8 @@
   .shadow {
     z-index: -10;
     position: absolute;
-    left: 8px;
-    top: 4px;
+    left: 6px;
+    top: 2px;
     background: transparent url('/static/text-pattern.png') repeat left top;
     color: transparent;
     background-clip: text;

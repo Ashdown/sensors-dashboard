@@ -1,0 +1,16 @@
+.dashboard-svg {
+
+  $icon-height: 24px;
+
+  height: $icon-height;
+  width: $icon-height;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -($icon-height/2);
+
+  .path {
+    fill: $light-grey;
+  }
+
+}

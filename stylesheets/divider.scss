@@ -1,0 +1,61 @@
+.divider {
+
+  $circle-height: 4px;
+
+  display: block;
+  height: 8px;
+  overflow: hidden;
+  margin-top: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: relative;
+
+  .left-container,
+  .right-container {
+    width: 50%;
+  }
+
+  .left-container {
+    float: left;
+  }
+
+  .right-container {
+    float: right;
+  }
+
+  .circle {
+    background-color: $light-grey;
+    height: $circle-height;
+    width: $circle-height;
+    border-radius: $circle-height/2;
+    display: inline-block;
+  }
+
+  .left-container .circle {
+    float: left;
+  }
+
+  .right-container .circle {
+    float: right;
+  }
+
+  .line {
+    display: block;
+    width: auto;
+    overflow: hidden;
+    height: $circle-height / 2;
+    background-color: $light-grey;
+    margin-top: 1px;
+  }
+
+  .left-container .line {
+    margin-left: $circle-height * 2;
+    margin-right: 16px;
+  }
+
+  .right-container .line {
+    margin-right: $circle-height * 2;
+    margin-left: 16px;
+  }
+
+}
