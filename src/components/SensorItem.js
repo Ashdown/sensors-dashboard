@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from "react";
 import DataList from "./DataList";
+import ChevronSvg from "../svgs/ChevronSvg";
 
 export default class SensorItem extends Component {
 
@@ -7,10 +8,23 @@ export default class SensorItem extends Component {
         sensorData: PropTypes.object.isRequired,
     };
 
+    rollOver = () => {
+        this.setState({
+            rollover: true
+        });
+    };
+
+    rollOut = () => {
+        this.setState({
+            rollover: false
+        });
+    };
+
     constructor () {
         super();
         this.state = {
-            status: 'closed'
+            status: 'closed',
+            rollover: false
         };
     }
 
@@ -48,10 +62,21 @@ export default class SensorItem extends Component {
 
         }
 
+        let rolloverClassName = this.state.rollover ? 'hover' : '';
+
         return (
-            <li className={"sensor-item " + this.state.status}>
-                <a className="sensor-link" onClick={(event) => showData(this.props.sensorData.id, event, this)} href="/">{this.props.sensorData.name}</a>
-                <DataList recordings={this.props.sensorData.data} />
+            <li className={"sensor-item " + this.state.status + " " + rolloverClassName}>
+                <div className="content">
+                    <p className="descriptor">Sensor name</p>
+                    <h3 className="title">{this.props.sensorData.name}</h3>
+                </div>
+                <a className="sensor-link" onMouseEnter={this.rollOver} onMouseLeave={this.rollOut} href="/">
+                    <span className="link-text">Show all Recordings<ChevronSvg/></span>
+                </a>
+
+
+                {/*<a className="sensor-link" onClick={(event) => showData(this.props.sensorData.id, event, this)} href="/">{this.props.sensorData.name}</a>*/}
+                {/*<DataList recordings={this.props.sensorData.data} />*/}
             </li>
         );
     }

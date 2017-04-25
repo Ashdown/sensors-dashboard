@@ -5,7 +5,7 @@
 @include respond-to(tablet) {
   .sensor-list {
     margin-top: 24px;
-    width: map-get($sensor-item-width, tablet) * 3;
+    width: map-get($sensor-item-width, tablet) * 2;
     margin-left: auto;
     margin-right: auto;
   }

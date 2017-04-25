@@ -1,24 +1,45 @@
 .sensor-item {
   margin-top: 8px;
   width: map-get($sensor-item-width, mobile);
-  height: 400px;
-  background-color: $light-grey;
+  position: relative;
+
+  .content {
+    background-color: $white;
+    margin: 0 8px 8px 8px;
+    min-height: 200px;
+    @include box-shadow(4px, $light-grey);
+    @include transition(all, 0.4s, ease);
+  }
 
   .sensor-link {
-    color: $white;
-    font-size: 24px;
-    text-align: center;
-    display: block;
-    padding: 8px;
-    text-decoration: none;
-    text-transform: capitalize;
-    @include transition(background-color, 0.2s, ease);
+    position: absolute;
+    top: 0;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    border: 2px solid transparent;
+    @include transition(all, 0.4s, ease);
 
-    &:hover {
-      background-color: $white;
-      color: $dark-grey
+  }
+
+  .link-text {
+    color: $blue;
+    width: 100%;
+    font-size: 12px;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    text-transform: uppercase;
+  }
+
+  &.hover {
+    .content {
+      @include box-shadow(8px, $light-grey);
     }
-
+    .sensor-link {
+      border-color: $blue;
+    }
   }
 
 }
@@ -27,10 +48,6 @@
   .sensor-item {
     margin-top: 16px;
     width: map-get($sensor-item-width, tablet);
-    .sensor-link {
-      text-align: right;
-      padding: 16px;
-    }
   }
 }
 

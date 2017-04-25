@@ -26,3 +26,9 @@
   -webkit-background-clip: $property;
   -moz-background-clip: $property;
 }
+
+@mixin box-shadow($size, $color) {
+  -webkit-box-shadow: $size $size 0 0 $color;
+  -moz-box-shadow: $size $size 0 0 $color;
+  box-shadow: $size $size 0 0 $color;
+}
