@@ -43,7 +43,7 @@
     display: block;
     width: auto;
     overflow: hidden;
-    height: $circle-height / 2;
+    height: 2px;
     background-color: $light-grey;
     margin-top: 1px;
   }
@@ -58,4 +58,35 @@
     margin-left: 16px;
   }
 
+}
+
+@include respond-to(tablet) {
+  .divider {
+    $circle-height: 8px;
+
+    .circle {
+      height: $circle-height;
+      width: $circle-height;
+      border-radius: $circle-height/2;
+    }
+
+    .line {
+      margin-top: 3px;
+    }
+
+    .left-container .line {
+      margin-left: $circle-height * 2;
+    }
+
+    .right-container .line {
+      margin-right: $circle-height * 2;
+    }
+
+  }
+}
+
+@include respond-to(desktop) {
+  .divider {
+    margin-top: 40px;
+  }
 }

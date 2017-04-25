@@ -20,3 +20,9 @@
   -o-transition: $property $duration $type;
   transition: $property $duration $type;
 }
+
+@mixin background-clip($property) {
+  background-clip: $property;
+  -webkit-background-clip: $property;
+  -moz-background-clip: $property;
+}

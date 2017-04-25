@@ -14,3 +14,9 @@
   }
 
 }
+
+@include respond-to(tablet) {
+  .dashboard-svg {
+    top: 2px;
+  }
+}
