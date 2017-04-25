@@ -8,6 +8,16 @@
     margin-top: 16px;
   }
 
+  .background {
+    background: #fff url('/static/background.png') repeat top left;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -100;
+  }
+
 }
 
 @include respond-to(tablet) {
