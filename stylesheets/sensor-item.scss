@@ -1,6 +1,8 @@
 .sensor-item {
   margin-top: 8px;
-  border: 2px solid $white;
+  width: map-get($sensor-item-width, mobile);
+  height: 400px;
+  background-color: $light-grey;
 
   .sensor-link {
     color: $white;
@@ -24,9 +26,16 @@
 @include respond-to(tablet) {
   .sensor-item {
     margin-top: 16px;
+    width: map-get($sensor-item-width, tablet);
     .sensor-link {
       text-align: right;
       padding: 16px;
     }
+  }
+}
+
+@include respond-to(desktop) {
+  .sensor-item {
+    width: map-get($sensor-item-width, desktop);
   }
 }

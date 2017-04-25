@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as sensorActions from "../actions/sensorActions";
 import fetch from "isomorphic-fetch";
-
-
+import Masonry from "masonry-layout";
 
 @connect(state => ({
     sensorlist: state.sensorlist
@@ -31,6 +30,28 @@ export default class SensorList extends Component {
         const { sensorlist: { sensors }, dispatch } = this.props;
         const actions = bindActionCreators(sensorActions, dispatch);
         this.fetchAllSensorData(actions, dispatch);
+    }
+
+    componentDidUpdate() {
+
+        let sensorList = React.findDOMNode(this);
+
+        if(this.grid === undefined) {
+            this.grid = new Masonry('.sensor-list', {
+                itemSelector: '.sensor-item',
+                transitionDuration: 0
+            });
+        } else {
+
+            let sensorItems = sensorList.getElementsByClassName('sensor-item');
+
+            if (this.grid.getItemElements().length < sensorItems.length) {
+
+                this.grid.appended(sensorItems[sensorItems.length - 1]);
+
+            }
+            this.grid.layout();
+        }
     }
 
     render() {

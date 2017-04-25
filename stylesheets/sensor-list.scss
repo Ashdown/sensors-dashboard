@@ -5,11 +5,15 @@
 @include respond-to(tablet) {
   .sensor-list {
     margin-top: 24px;
+    width: map-get($sensor-item-width, tablet) * 3;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @include respond-to(desktop) {
   .sensor-list {
     margin-top: 32px;
+    width: map-get($sensor-item-width, desktop) * 3;
   }
 }
