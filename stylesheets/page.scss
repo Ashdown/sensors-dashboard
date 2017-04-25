@@ -1,11 +1,10 @@
 .page {
   font-family: Helvetica, Arial, sans-serif;
-  color: $white;
+  color: $dark-grey;
   overflow: hidden;
 
-  .main-title {
-    font-size: 32px;
-    margin-top: 16px;
+  .title {
+    text-transform: uppercase;
   }
 
   .background {
@@ -20,20 +19,3 @@
 
 }
 
-@include respond-to(tablet) {
-  .page {
-    .main-title {
-      font-size: 40px;
-      margin-top: 32px;
-    }
-  }
-}
-
-@include respond-to(desktop) {
-  .page {
-    .main-title {
-      font-size: 56px;
-      margin-top: 48px;
-    }
-  };
-}
