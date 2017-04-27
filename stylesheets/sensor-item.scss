@@ -6,9 +6,40 @@
   .content {
     background-color: $white;
     margin: 0 8px 8px 8px;
-    min-height: 200px;
+    padding: 24px 0 54px 0;
     @include box-shadow(4px, $light-grey);
     @include transition(all, 0.4s, ease);
+  }
+
+  .descriptor {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: $sharp-grey;
+    margin: 0 16px;
+  }
+
+  $title-offset: 12px;
+
+  .title {
+    left: -$title-offset;
+    position: relative;
+    background-color: $blue;
+    margin-top: 8px;
+    padding: 8px 40px;
+    color: $white;
+    text-align: left;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .sling {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: $title-offset solid transparent;
+    border-top: $title-offset  solid $dark-blue;
   }
 
   .sensor-link {

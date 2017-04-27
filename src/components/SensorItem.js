@@ -20,6 +20,12 @@ export default class SensorItem extends Component {
         });
     };
 
+    showMore = (event) => {
+
+        event.preventDefault();
+        console.log('click');
+    };
+
     constructor () {
         super();
         this.state = {
@@ -67,10 +73,11 @@ export default class SensorItem extends Component {
         return (
             <li className={"sensor-item " + this.state.status + " " + rolloverClassName}>
                 <div className="content">
-                    <p className="descriptor">Sensor name</p>
-                    <h3 className="title">{this.props.sensorData.name}</h3>
+                    <p className="descriptor">Sensor</p>
+                    <h3 className="title">{this.props.sensorData.name}<span className="sling"></span></h3>
+
                 </div>
-                <a className="sensor-link" onMouseEnter={this.rollOver} onMouseLeave={this.rollOut} href="/">
+                <a className="sensor-link" onMouseEnter={this.rollOver} onMouseLeave={this.rollOut} onClick={this.showMore} href="/">
                     <span className="link-text">Show all Recordings<ChevronSvg/></span>
                 </a>
 
