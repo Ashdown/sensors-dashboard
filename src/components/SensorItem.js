@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from "react";
+import AverageValue from "./AverageValue";
 import DataList from "./DataList";
 import ChevronSvg from "../svgs/ChevronSvg";
 
@@ -77,7 +78,8 @@ export default class SensorItem extends Component {
                     <a className="sensor-link" onMouseEnter={this.rollOver} onMouseLeave={this.rollOut} onClick={this.showMore} href="/">
                         <span className="link-text">Show all Recordings<ChevronSvg/></span>
                     </a>
-                    <DataList recordings={this.props.sensorData.data} />
+                    <AverageValue recordings={this.props.sensorData.data} />
+                    {/*<DataList recordings={this.props.sensorData.data} />*/}
                 </div>
 
 
