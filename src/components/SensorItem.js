@@ -24,6 +24,8 @@ export default class SensorItem extends Component {
 
     //promise example
     //https://developers.google.com/web/fundamentals/getting-started/primers/promises#whats-all-the-fuss-about
+    //good fetch example
+    //http://stackoverflow.com/questions/37497711/react-js-loading-json-data-with-fetch-api-and-props-from-object-array
 
     fetchRecordingData = (callback) => {
 
