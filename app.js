@@ -29,13 +29,16 @@ app.get("/sensor/:sensorid", function(req, res) {
     let allData = require("./data/data.json");
     let sensorId = req.params.sensorid;
 
-    let responseData = [];
+    // let responseData = [];
+    //
+    // for(let data of allData) {
+    //     if(data.sensorId === sensorId) {
+    //         responseData.push(data);
+    //     }
+    // }
 
-    for(let data of allData) {
-        if(data.sensorId === sensorId) {
-            responseData.push(data);
-        }
-    }
+    const responseData = allData.filter((datum) => datum.sensorId === sensorId);
+
     res.send(responseData);
 });
 
