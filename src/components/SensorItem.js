@@ -22,17 +22,19 @@ export default class SensorItem extends Component {
         });
     };
 
+    //promise example
+    //https://developers.google.com/web/fundamentals/getting-started/primers/promises#whats-all-the-fuss-about
+
     fetchRecordingData = (callback) => {
 
-        let id = this.props.sensorData.id,
-            component = this;
+        let id = this.props.sensorData.id;
 
         fetch("/sensor/" + id)
-            .then(function (response) {
+            .then((response) => {
                 return response.json();
             })
-            .then(function (data) {
-                component.props.dispatch(component.props.actions.addRecordingData(id, data));
+            .then((data) => {
+                this.props.dispatch(this.props.actions.addRecordingData(id, data));
                 callback();
             });
     };
