@@ -30,8 +30,10 @@ describe("SensorItem Component", () => {
     it("should render self and subcomponents", () => {
         const {enzymeWrapper, props} = setup();
         expect(enzymeWrapper.find(".sensor-item").hasClass("sensor-item")).toBe(true);
-        const dataListProps = enzymeWrapper.find("DataList").props();
-        expect(dataListProps.recordings).toBe(props.sensorData.data);
+        const averageValueProps = enzymeWrapper.find("AverageValue").props();
+        expect(averageValueProps.recordings).toBe(props.sensorData.data);
+        // const dataListProps = enzymeWrapper.find("DataList").props();
+        // expect(dataListProps.recordings).toBe(props.sensorData.data);
     });
 });
 
