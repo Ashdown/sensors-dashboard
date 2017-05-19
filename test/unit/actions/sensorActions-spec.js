@@ -13,7 +13,7 @@ describe("actions", () => {
         expect(actions.addSensorData(data)).toEqual(expectedAction);
     });
     it("should create an action to add recording data", () => {
-        const sensorId = 1234
+        const sensorId = 1234;
         const data = "Lorem Ipsum";
         const expectedAction = {
             type: types.ADD_RECORDING_DATA,

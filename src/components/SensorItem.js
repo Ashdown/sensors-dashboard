@@ -1,9 +1,9 @@
 import React, {Component, PropTypes} from "react";
 import AverageValue from "./AverageValue";
-import DataList from "./DataList";
+import { connect } from 'react-redux';
 import ChevronSvg from "../svgs/ChevronSvg";
 
-export default class SensorItem extends Component {
+export class SensorItem extends Component {
 
     static propTypes = {
         sensorData: PropTypes.object.isRequired,
@@ -11,33 +11,22 @@ export default class SensorItem extends Component {
 
     toggleAccordion = () => {
 
-        let newStatus = "open";
-
-        if(this.state.status === 'open') {
-            newStatus = 'closed';
-        }
-
         this.setState({
-            status: newStatus
+            status: this.state.status === 'open' ? 'closed' : 'open'
         });
+
     };
 
-    //promise example
-    //https://developers.google.com/web/fundamentals/getting-started/primers/promises#whats-all-the-fuss-about
-    //good fetch example
-    //http://stackoverflow.com/questions/37497711/react-js-loading-json-data-with-fetch-api-and-props-from-object-array
-
-    fetchRecordingData = (callback) => {
+    fetchRecordingData = () => {
 
         let id = this.props.sensorData.id;
 
-        fetch("/sensor/" + id)
+        return fetch("/sensor/" + id)
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
                 this.props.dispatch(this.props.actions.addRecordingData(id, data));
-                callback();
             });
     };
 
@@ -59,7 +48,7 @@ export default class SensorItem extends Component {
 
         let component = this;
 
-        this.fetchRecordingData(this.toggleAccordion);
+        this.fetchRecordingData().then(this.toggleAccordion());
     };
 
     constructor () {
@@ -93,3 +82,5 @@ export default class SensorItem extends Component {
         );
     }
 }
+
+export default connect(state => ({sensorlist: state.sensorlist}))(SensorItem);

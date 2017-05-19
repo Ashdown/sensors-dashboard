@@ -19,7 +19,6 @@ export default class SensorList extends Component {
             })
             .then(function (data) {
                 for (let sensorData of data) {
-                    console.log('dispatch');
                     dispatch(actions.addSensorData(sensorData));
                 }
             });
