@@ -2,7 +2,7 @@
 
 import React from "react";
 import {shallow} from "enzyme";
-import DataList from "../../src/components/DataList";
+import DataList from "../../../src/components/DataList";
 
 function setup() {
 

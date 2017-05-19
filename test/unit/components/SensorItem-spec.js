@@ -2,7 +2,7 @@
 
 import React from "react";
 import {shallow} from "enzyme";
-import SensorItem from "../../src/components/SensorItem";
+import SensorItem from "../../../src/components/SensorItem";
 
 function setup() {
 

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { shallow } from "enzyme";
-import DataItem from "../../src/components/DataItem";
+import DataItem from "../../../src/components/DataItem";
 
 function setup() {
 
