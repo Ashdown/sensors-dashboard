@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {combineReducers, applyMiddleware} from "redux";
+import {combineReducers} from "redux";
 import {Provider} from "react-redux";
 import {createStore, renderDevTools} from "../store_enhancers/devTools";
 import MainTitle from "../components/MainTitle";

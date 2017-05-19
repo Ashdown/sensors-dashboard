@@ -1,10 +1,9 @@
 import React, {Component, PropTypes} from "react";
 import SensorItem from "./SensorItem";
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as sensorActions from "../actions/sensorActions";
 import fetch from "isomorphic-fetch";
 import Masonry from "masonry-layout";
+import * as actions from "../actions/sensorActions";
 
 @connect(state => ({
     sensorlist: state.sensorlist
@@ -20,6 +19,7 @@ export default class SensorList extends Component {
             })
             .then(function (data) {
                 for (let sensorData of data) {
+                    console.log('dispatch');
                     dispatch(actions.addSensorData(sensorData));
                 }
             });
@@ -28,7 +28,6 @@ export default class SensorList extends Component {
 
     componentWillMount() {
         const { sensorlist: { sensors }, dispatch } = this.props;
-        const actions = bindActionCreators(sensorActions, dispatch);
         this.fetchAllSensorData(actions, dispatch);
     }
 
@@ -57,7 +56,6 @@ export default class SensorList extends Component {
     render() {
 
         const { sensorlist: { sensors }, dispatch } = this.props;
-        const actions = bindActionCreators(sensorActions, dispatch);
         let sensorItems = [];
 
         for(let sensorData of sensors) {

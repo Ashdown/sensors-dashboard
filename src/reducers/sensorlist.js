@@ -15,43 +15,44 @@ function sortRecordingDataByTime(data) {
 export default function sensorlist(state = initialState, action) {
 
     switch (action.type) {
-        case types.ADD_SENSOR_DATA:
+    case types.ADD_SENSOR_DATA:
 
             //update existing sensor
+            //should have used array.map here
 
-            for (let sensor of state.sensors) {
-                if (sensor.id === action.data.id) {
-                    sensor.name = action.data.name;
-                    return state;
-                }
+        for (let sensor of state.sensors) {
+            if (sensor.id === action.data.id) {
+                sensor.name = action.data.name;
+                return state;
             }
+        }
 
             //add a new sensor recording
 
-            return {
-                sensors: [
-                    ...state.sensors,
-                    {
-                        id: action.data.id,
-                        name: action.data.name,
-                        data: []
-                    }
-                ]
-            };
-
-
-        case types.ADD_RECORDING_DATA:
-
-            for (let sensor of state.sensors) {
-                if(sensor.id === action.sensorId) {
-
-                    sensor.data = sortRecordingDataByTime(action.data);
-
+        return {
+            sensors: [
+                ...state.sensors,
+                {
+                    id: action.data.id,
+                    name: action.data.name,
+                    data: []
                 }
-            }
-            return state;
+            ]
+        };
 
-        default:
-            return state;
+
+    case types.ADD_RECORDING_DATA:
+
+        for (let sensor of state.sensors) {
+            if(sensor.id === action.sensorId) {
+
+                sensor.data = sortRecordingDataByTime(action.data);
+
+            }
+        }
+        return state;
+
+    default:
+        return state;
     }
 }
